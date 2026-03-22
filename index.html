@@ -1,243 +1,170 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio Ready PH</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Ready PH</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #f9fafb;
-      color: #111;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f9fafb;
+}
 
-    a { text-decoration: none; }
-
-    /* HEADER */
-    header {
-      position: sticky;
-      top: 0;
-      background: #0b0b0b;
-      padding: 15px 40px;
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
-      z-index: 1000;
-    }
-
-    header a {
-      color: #fff;
-      margin-left: 20px;
-      font-size: 14px;
-    }
-
-    header a:hover {
-      color: #3b82f6;
-    }
+/* HEADER */
+header {
+  background: #0b0b0b;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+}
 
 /* COVER */
 .cover {
+  height: 220px;
+  background: url('cover.jpg') center/cover no-repeat;
   position: relative;
 }
 
+.cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
 .profile-pic {
-      position: absolute;
-      bottom: -50px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      border: 4px solid white;
-      object-fit: cover;
-      background: #000;
-    }
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 4px solid white;
+}
 
-    /* HERO TEXT */
-    .hero {
-      text-align: center;
-      padding: 80px 20px 40px;
-    }
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px 40px;
+}
 
-    .hero h1 {
-      margin-top: 60px;
-      font-size: 32px;
-    }
+.btn {
+  padding: 10px 20px;
+  background: #3b82f6;
+  color: white;
+  border-radius: 20px;
+  display: inline-block;
+}
 
-    .hero p {
-      color: #555;
-    }
+/* SECTIONS */
+section {
+  padding: 50px 20px;
+  text-align: center;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      border-radius: 25px;
-      background: #3b82f6;
-      color: white;
-      transition: 0.3s;
-    }
+/* SAMPLE LINKS */
+.sample-link {
+  cursor: pointer;
+  color: #3b82f6;
+  margin: 10px;
+}
 
-    .btn:hover {
-      background: #2563eb;
-      transform: scale(1.05);
-    }
+.sample-link:hover {
+  text-decoration: underline;
+}
 
-    /* SECTIONS */
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
 
-    h2 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
+.modal img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
 
-    /* CARDS */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    /* PORTFOLIO IMAGES */
-    .portfolio {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .portfolio img {
-      width: 100%;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
-
-    .portfolio img:hover {
-      transform: scale(1.05);
-    }
-
-    /* CONTACT */
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    input, textarea {
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-    }
-
-    button {
-      background: #3b82f6;
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 20px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #2563eb;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #0b0b0b;
-      color: white;
-    }
-  </style>
+/* FOOTER */
+footer {
+  background: #0b0b0b;
+  color: white;
+  padding: 20px;
+}
+</style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
-  <div><strong>Portfolio Ready PH</strong></div>
-  <div>
-    <a href="#services">Services</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
-  </div>
+  <h3>Portfolio Ready PH</h3>
 </header>
 
-<!-- COVER + PROFILE -->
+<!-- COVER -->
 <div class="cover">
-  <img src="profile.jpg" class="profile-pic" alt="Profile">
+  <img src="profile.jpg" class="profile-pic">
 </div>
 
 <!-- HERO -->
 <div class="hero">
   <h1>Portfolio Ready PH</h1>
-  <p>I help beginners build clean web portfolios so they can apply for jobs faster 💻</p>
+  <p>I help beginners build clean web portfolios 💻</p>
   <a href="#contact" class="btn">Message Me</a>
 </div>
 
 <!-- SERVICES -->
-<section id="services">
+<section>
   <h2>Services</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Portfolio Setup</h3>
-      <p>Clean one-page portfolio design.</p>
-    </div>
-    <div class="card">
-      <h3>Beginner Friendly</h3>
-      <p>Easy process even if you're new.</p>
-    </div>
-    <div class="card">
-      <h3>Fast Delivery</h3>
-      <p>Get your portfolio ready quickly.</p>
-    </div>
-  </div>
+  <p>✔ Clean Portfolio Design</p>
+  <p>✔ Beginner Friendly</p>
+  <p>✔ Fast Delivery</p>
 </section>
 
-<!-- PORTFOLIO -->
-<section id="portfolio">
+<!-- SAMPLE WORK -->
+<section>
   <h2>Sample Work</h2>
-  <div class="portfolio">
-<img src="sample1.jpg">
-<img src="sample2.jpg">
-<img src="sample3.jpg">
-  </div>
+
+  <p class="sample-link" onclick="openModal('sample1.jpg')">Sample 1</p>
+  <p class="sample-link" onclick="openModal('sample2.jpg')">Sample 2</p>
+  <p class="sample-link" onclick="openModal('sample3.jpg')">Sample 3</p>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <h2>Contact Me</h2>
-  <form onsubmit="event.preventDefault(); alert('Message sent!');">
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <textarea placeholder="Message (type PORTFOLIO)" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
+  <h2>Contact</h2>
+  <p>Message me "PORTFOLIO"</p>
 </section>
+
+<!-- MODAL -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+  <img id="modalImg">
+</div>
 
 <footer>
   © 2026 Portfolio Ready PH
 </footer>
+
+<script>
+function openModal(img) {
+  document.getElementById("imageModal").style.display = "flex";
+  document.getElementById("modalImg").src = img;
+}
+
+function closeModal() {
+  document.getElementById("imageModal").style.display = "none";
+}
+</script>
 
 </body>
 </html>
