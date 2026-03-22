@@ -182,3 +182,12 @@ input:focus, textarea:focus{ border-color:#cfe0ff; box-shadow:0 0 0 4px #eef4ff;
   .hero-text h1{ font-size:32px; }
   .features{ grid-template-columns:1fr; }
 }
+.cover-text {
+  position: absolute;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
