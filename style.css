@@ -183,14 +183,14 @@ input:focus, textarea:focus{ border-color:#cfe0ff; box-shadow:0 0 0 4px #eef4ff;
   .features{ grid-template-columns:1fr; }
 }
 .cover {
-  height: 220px;
-  background: url('cover.jpg') center/cover no-repeat;
+  height: 75px;
+  background: url('cover.jpg') left/cover no-repeat;
   position: relative;
 }
 
 .cover::after {
   content: "";
-  position: absolute;
+  position: left;
   inset: 0;
   background: rgba(0,0,0,0.5);
 }
